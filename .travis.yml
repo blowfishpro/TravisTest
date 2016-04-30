@@ -2,3 +2,6 @@ language: csharp
 solution: TravisTest.sln
 before_install:
   - pwd
+  - wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=0BwOUWbxCxiu_Vk5MeWdGRVRkQ0U' -O KSP_DLLs.zip
+  - unzip KSP_DLLs.zip
+  - mv KSP_DLLs/* TravisTest/bin/Release/
