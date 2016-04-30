@@ -3,7 +3,7 @@ solution: TravisTest.sln
 before_install:
   - pwd
   - wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=0BwOUWbxCxiu_QWlWVmxaOF9DQ2s' -O KSP_DLLs.zip.enc
-  - openssl aes-256-cbc -K $encrypted_e17ceeb9da7b_key -iv $encrypted_e17ceeb9da7b_iv -in KSP_DLLs.zip.enc -out .\\KSP_DLLs.zip -d
+  - openssl aes-256-cbc -K $encrypted_3f1be2cdac5b_key -iv $encrypted_3f1be2cdac5b_iv -in KSP_DLLs.zip.enc -out KSP_DLLs.zip -d
   - unzip KSP_DLLs.zip
   - mkdir -p TravisTest/bin/Release/
   - mv KSP_DLLs/* TravisTest/bin/Release/
