@@ -1,14 +1,9 @@
 language: csharp
 solution: TravisTest.sln
 before_install:
-  # Get file from Google Drive (id is encrypted)
-  - wget --no-check-certificate --quiet "https://drive.google.com/uc?export=download&id=${GDRIVE_DLL_PACKAGE_ID}" -O KSP_DLLs.zip.enc
-  # Decrypt file
-  - openssl aes-256-cbc -K $encrypted_3f1be2cdac5b_key -iv $encrypted_3f1be2cdac5b_iv -in KSP_DLLs.zip.enc -out KSP_DLLs.zip -d
-  - unzip KSP_DLLs.zip
+  # Get KSP DLL package from Google Drive
+  - wget --no-check-certificate --quiet "https://drive.google.com/uc?export=download&id=${GDRIVE_DLL_PACKAGE_ID}" -O KSP_DLLs.zip
+  # Unzip
+  - unzip -P ${DLL_PACKAGE_ZIP_PASSPHRASE} KSP_DLLs.zip
   - mkdir -p TravisTest/bin/Release/
   - mv KSP_DLLs/* TravisTest/bin/Release/
-env:
-  global:
-    # GDRIVE_DLL_PACKAGE_ID
-    secure: IrEwFHmlFIrxH7wvDVuCsu1PfJc2bjNRVcdaOoJzp013GypiBXiBkIIc0qmQEhEoK8zegRolSZW0nkkk2Tn1OaLCDc1TBFd1uoYWjxGJYYe/YQ2JK0Mvwa9jM+iutqOvyj0jwlvozZiJWNYbfQsMQiI718+MjCcuwn49XjcTHdQ71+E23SmOAdEiTDi3OSPPVN9OSFwxfjIT5Ht7t9KDGD9dlXm018aGNWokTlsbIlS9OVODAOc/4K/ZLged/rlajhKalMoNa/dXQvyKPb6m86kkQp2+m0E0Jv0nRQTcaSEBQxbU+ngWq8PkonOSakpaViii6YQmE5yJm13ERKk6yPHy23yn9jncpa8MuernKQT0/Jfx2wqqadoWkkhQJfBgsx+faAN1FPInPbTyMm40er0T+tmwdUqyL3isBe7D6nyTgR6aN0ib3TwPCfdXQsHLljSsO+0H6jZqvo0c6abAUo9w6UVy901d3YMS6Vd0mdLZxa4f1qPScJYNiX2ERxBAD8lW9rymjDwGZ1I7Wq6JFBBQZ3kXhdQanxypBNEdXepTllH8s6gfkH4sFx/sy+3S8/Ffeb5i+ov2a0DxDwZsYLsJrwwsV31UJao+U5dulQdb9iZo43HI1RlDufl7zrTE5sGjXa7ELpek+G088CtLkj5uhqB9P4b/jjO4P+jnBTs=
