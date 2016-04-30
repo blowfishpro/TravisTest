@@ -7,3 +7,9 @@ before_install:
   - unzip -P ${DLL_PACKAGE_ZIP_PASSPHRASE} KSP_DLLs.zip
   - mkdir -p TravisTest/bin/Release/
   - mv KSP_DLLs/* TravisTest/bin/Release/
+after_success:
+  - mkdir -p GameData/TravisTest/Plugins
+  - echo "this is a readme" > GameData/TravisTest/readme.txt
+  - cp TravisTest/bin/Release/TravisTest.dll GameData/TravisTest/Plugins
+  - zip -r TravisTest.zip GameData
+  - unzip -l TravisTest.zip
