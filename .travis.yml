@@ -2,7 +2,7 @@ language: csharp
 solution: TravisTest.sln
 before_install:
   # Get file from Google Drive (id is encrypted)
-  - wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${GDRIVE_DLL_PACKAGE_ID}" -O KSP_DLLs.zip.enc
+  - wget --no-check-certificate --quiet "https://drive.google.com/uc?export=download&id=${GDRIVE_DLL_PACKAGE_ID}" -O KSP_DLLs.zip.enc
   # Decrypt file
   - openssl aes-256-cbc -K $encrypted_3f1be2cdac5b_key -iv $encrypted_3f1be2cdac5b_iv -in KSP_DLLs.zip.enc -out KSP_DLLs.zip -d
   - unzip KSP_DLLs.zip
