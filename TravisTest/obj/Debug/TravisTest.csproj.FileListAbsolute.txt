@@ -1,0 +1,5 @@
+d:\users\joey d wong\documents\Github\TravisTest\TravisTest\TravisTest\TravisTest\bin\Debug\TravisTest.dll
+d:\users\joey d wong\documents\Github\TravisTest\TravisTest\TravisTest\TravisTest\bin\Debug\TravisTest.pdb
+d:\users\joey d wong\documents\Github\TravisTest\TravisTest\TravisTest\TravisTest\obj\Debug\TravisTest.csprojResolveAssemblyReference.cache
+d:\users\joey d wong\documents\Github\TravisTest\TravisTest\TravisTest\TravisTest\obj\Debug\TravisTest.dll
+d:\users\joey d wong\documents\Github\TravisTest\TravisTest\TravisTest\TravisTest\obj\Debug\TravisTest.pdb
