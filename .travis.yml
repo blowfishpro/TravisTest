@@ -1,2 +1,2 @@
- 
- 
+language: C#
+solution: TravisTest.sln
