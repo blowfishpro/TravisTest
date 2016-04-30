@@ -1,2 +1,4 @@
 language: csharp
 solution: TravisTest.sln
+before_install:
+  - pwd
