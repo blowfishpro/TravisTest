@@ -13,7 +13,8 @@
   [
     {
       "includePattern"  : "Release/(.*\\.zip)",
-      "uploadPattern"   : "blah/$1"
+      "uploadPattern"   : "blah/$1",
+      "matrixParams"    : { "override" : "1"}
     }
   ],
   "publish" : true
