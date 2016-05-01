@@ -11,7 +11,10 @@
   },
   "files" :
   [
-    {"includePattern": "TravisTest.zip", "uploadPattern": "blah/$1"}
+    {
+      "includePattern"  : "(TravisTest\\.zip)",
+      "uploadPattern"   : "blah/$1"
+    }
   ],
   "publish" : true
 }
