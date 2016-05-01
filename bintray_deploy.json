@@ -1,0 +1,16 @@
+{
+  "package" :
+  {
+    "name"    : "TestPackage",
+    "repo"    : "TravisTest",
+    "subject" : "blowfishpro"
+  },
+  "version" :
+  {
+    "name" : "dev"
+  },
+  "files" :
+  [
+    {"includePattern": "TravisTest.zip", "uploadPattern": "blah/$1"}
+  ]
+}
