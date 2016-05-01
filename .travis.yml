@@ -9,9 +9,10 @@ before_install:
   - mv KSP_DLLs/* TravisTest/bin/Release/
 after_success:
   - mkdir -p GameData/TravisTest/Plugins
+  - mkdir Release
   - echo "this is a readme" > GameData/TravisTest/readme.txt
   - cp TravisTest/bin/Release/TravisTest.dll GameData/TravisTest/Plugins
-  - zip -r TravisTest.zip GameData
+  - zip -r Release/TravisTest.zip GameData
 deploy:
   provider: bintray
   file: bintray_deploy.json

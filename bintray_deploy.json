@@ -12,7 +12,7 @@
   "files" :
   [
     {
-      "includePattern"  : "\\./(TravisTest\\.zip)",
+      "includePattern"  : "Release/(.*\\.zip)",
       "uploadPattern"   : "blah/$1"
     }
   ],
