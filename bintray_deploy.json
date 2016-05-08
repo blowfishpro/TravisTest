@@ -12,7 +12,7 @@
   "files" :
   [
     {
-      "includePattern"  : "Release/(.*\\.zip)",
+      "includePattern"  : "zip_release/(.*\\.zip)",
       "uploadPattern"   : "blah/$1",
       "matrixParams"    : { "override" : "1"}
     }
