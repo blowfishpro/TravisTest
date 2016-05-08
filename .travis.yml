@@ -1,6 +1,8 @@
 language: csharp
 solution: TravisTest.sln
 before_install:
+  # Create project name
+  - export PROJECT_NAME="$(ECHO ${TRAVIS_REPO_SLUG} | sed 's/^[A-z0-9_-]*\///')"
   # Get KSP DLL package from Google Drive
   - wget --no-check-certificate --quiet "https://drive.google.com/uc?export=download&id=${GDRIVE_DLL_PACKAGE_ID}" -O KSP_DLLs.zip
   # Unzip
@@ -8,11 +10,11 @@ before_install:
   - mkdir -p TravisTest/bin/Release/
   - mv KSP_DLLs/${KSP_VERSION}/* TravisTest/bin/Release/
 after_success:
-  - mkdir -p GameData/TravisTest/Plugins
+  - mkdir -p GameData/${PROJECT_NAME}/Plugins
   - mkdir Release
-  - echo "this is a readme" > GameData/TravisTest/readme.txt
-  - cp TravisTest/bin/Release/TravisTest.dll GameData/TravisTest/Plugins
-  - zip -r Release/TravisTest.zip GameData
+  - echo "this is a readme" > GameData/${PROJECT_NAME}/readme.txt
+  - cp TravisTest/bin/Release/TravisTest.dll GameData/${PROJECT_NAME}/Plugins
+  - zip -r Release/${PROJECT_NAME}.zip GameData
 deploy:
   provider: bintray
   file: bintray_deploy.json
