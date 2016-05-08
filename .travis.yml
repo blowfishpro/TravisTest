@@ -11,7 +11,7 @@ before_install:
   - mv KSP_DLLs/${KSP_VERSION}/* TravisTest/bin/Release/
 after_success:
   - mkdir release
-  - midir zip_release
+  - mkdir zip_release
   - cp -R GameData release
   - echo "this is a readme" > release/GameData/${PROJECT_NAME}/readme.txt
   - mkdir -p release/GameData/${PROJECT_NAME}/Plugins
