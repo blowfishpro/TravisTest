@@ -32,3 +32,6 @@
 *.dSYM/
 
 packages/*
+
+TravisTest/bin/*
+TravisTestTests/bin/*
