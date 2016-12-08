@@ -9,11 +9,5 @@ namespace TravisTestTests
         {
             Assert.True(true);
         }
-
-        [Fact]
-        public void FailingTest()
-        {
-            Assert.False(true);
-        }
     }
 }
