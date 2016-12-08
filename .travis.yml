@@ -9,6 +9,12 @@ before_install:
   - unzip -P ${DLL_PACKAGE_ZIP_PASSPHRASE} KSP_DLLs.zip
   - mkdir -p TravisTest/bin/Release/
   - mv KSP_DLLs/${KSP_VERSION}/* TravisTest/bin/Release/
+install:
+  - nuget restore ${TRAVIS_SOLUTION}
+  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release ${TRAVIS_SOLUTION}
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./TravisTestTests/bin/Release/TravisTestTests.dll
 after_success:
   - mkdir release
   - mkdir zip_release
