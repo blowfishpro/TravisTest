@@ -2,7 +2,7 @@
 
 namespace TravisTestTests
 {
-    public class Class1
+    public class Test
     {
         [Fact]
         public void PassingTest()

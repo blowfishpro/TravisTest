@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
 
 namespace TravisTest
 {
-    [KSPAddon(KSPAddon.Startup.Instantly, true)]
-    public class TravisTest : MonoBehaviour
+    public class Class1
     {
-        public void Awake()
+        private Func<string, int> function = (s) => s.Length;
+
+        public int Method1()
         {
-            Debug.Log("Hello world!");
+            return 123;
         }
     }
 }
